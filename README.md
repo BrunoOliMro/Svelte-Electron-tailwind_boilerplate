@@ -9,6 +9,8 @@ npm install
 npm run dev
 ```
 
+⚠ To reload the project while developing use Ctrl + R on electron app
+
 ## Building
 
 To build the project: 
