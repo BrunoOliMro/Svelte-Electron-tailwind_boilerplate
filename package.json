@@ -8,9 +8,45 @@
     "build:tailwind": "cross-env NODE_ENV=production postcss public/tailwind.css -o public/index.css",
     "build": "npm run build:tailwind && rollup -c",
     "dev": "concurrently \"rollup -c -w\" \"npm run watch:tailwind",
-    "start": "electron ."
+    "start": "electron .",
+    "package": "electron-forge package"
+  },
+  "keywords": [],
+  "author": "Brunoom",
+  "license": "MIT",
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "crawler"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
   },
   "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.67",
+    "@electron-forge/maker-deb": "^6.0.0-beta.67",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.67",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.67",
+    "@electron-forge/maker-zip": "^6.0.0-beta.67",
     "@rollup/plugin-commonjs": "^17.0.0",
     "@rollup/plugin-node-resolve": "^11.0.0",
     "autoprefixer": "^10.4.12",

@@ -16,3 +16,11 @@ To build the project:
 ```bash
 npm run build
 ```
+
+## Package 
+
+To package your project into an .exe file with de "name" specified in package.json:
+
+```bash
+npm run package
+```
